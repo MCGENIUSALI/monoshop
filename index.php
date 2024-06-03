@@ -13,7 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <!-- Box icons -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     
     <!-- Style CSS -->
     <style>
@@ -95,7 +95,14 @@
         display: block !important;
       }
 
-      /* ===== bg-img ====== */
+      /* ===== style-perso ====== */
+      .icon-header{
+        text-decoration: none;
+      }
+
+      .btn-connex{
+        /* padding: 0 50px; */
+      }
       .bg-image {
         background: rgb(15,105,148);
         background: linear-gradient(180deg, rgba(15,105,148,1) 0%, rgba(213,213,213,1) 100%);
@@ -123,19 +130,19 @@
                         <div class="col-sm-4 offset-md-1 py-4">
                             <h4>Suivez nous sur :</h4>
                             <ul class="list-unstyled">
-                                <li><a href="#" class="text-white">Twitter</a></li>
-                                <li><a href="#" class="text-white">Facebook</a></li>
-                                <li><a href="#" class="text-white">Instagram</a></li>
+                                <li><a href="#" class="text-white icon-header"><i class='bx bxl-twitter'></i> Twitter</a></li>
+                                <li><a href="#" class="text-white icon-header"><i class='bx bxl-facebook'></i> Facebook</a></li>
+                                <li><a href="#" class="text-white icon-header"><i class='bx bxl-instagram-alt'></i> Instagram</a></li>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex justify-content-between py-3 align-items-center">
                         <div class="btn-group">
-                            <a href="">
+                            <a href="../monoshop/html/connexion.php">
                                 <button type="button" class="btn btn-sm btn-outline-primary">Connexion</button>
                             </a>
-                            <a href="">
+                            <a href="../monoshop/html/createcompte.php">
                                 <button type="button" class="btn btn-sm btn-outline-primary">Créer un compte</button>
                             </a> 
                         </div>
@@ -147,7 +154,6 @@
             <div class="navbar navbar-dark bg-dark shadow-sm">
                 <div class="container">
                 <a href="#" class="navbar-brand d-flex align-items-center">
-                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg> -->
                     <span><img src="../monoshop/img/car dealer.png" width="150" alt=""></span>
                     <strong>VroomVroom</strong>
                 </a>
@@ -214,7 +220,9 @@
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-primary">Commander</button>
+                                        <a href="../monoshop/html/payment.php">
+                                            <button type="button" class="btn btn-sm btn-outline-primary">Commander</button>
+                                        </a>
                                     </div>
                                     <span class="text-body-secondary">2017</span>
                                     <span class="text-body-secondary">144805km</span>
@@ -238,7 +246,9 @@
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-primary">Commander</button>
+                                        <a href="../monoshop/html/payment.php">
+                                            <button type="button" class="btn btn-sm btn-outline-primary">Commander</button>
+                                        </a>
                                     </div>
                                     <span class="text-body-secondary">2017</span>
                                     <span class="text-body-secondary">144805km</span>
@@ -262,7 +272,9 @@
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-primary">Commander</button>
+                                        <a href="../monoshop/html/payment.php">
+                                            <button type="button" class="btn btn-sm btn-outline-primary">Commander</button>
+                                        </a>
                                     </div>
                                     <span class="text-body-secondary">2017</span>
                                     <span class="text-body-secondary">144805km</span>
@@ -286,7 +298,9 @@
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-primary">Commander</button>
+                                        <a href="../monoshop/html/payment.php">
+                                            <button type="button" class="btn btn-sm btn-outline-primary">Commander</button>
+                                        </a>
                                     </div>
                                     <span class="text-body-secondary">2017</span>
                                     <span class="text-body-secondary">144805km</span>
@@ -310,7 +324,9 @@
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-primary">Commander</button>
+                                        <a href="../monoshop/html/payment.php">
+                                            <button type="button" class="btn btn-sm btn-outline-primary">Commander</button>
+                                        </a>
                                     </div>
                                     <span class="text-body-secondary">2017</span>
                                     <span class="text-body-secondary">144805km</span>
