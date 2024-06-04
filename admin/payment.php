@@ -134,10 +134,10 @@
 
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <a href="">
+                            <a href="../config/connexion.php">
                                 <button type="button" class="btn btn-sm btn-outline-primary">Connexion</button>
                             </a>
-                            <a href="">
+                            <a href="../admin/createcompte.php">
                                 <button type="button" class="btn btn-sm btn-outline-primary">Créer un compte</button>
                             </a> 
                         </div>

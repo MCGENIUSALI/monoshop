@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.122.0">
-    <title>website_VroomVroom_connexion</title>
+    <title>website_VroomVroom_createcompte</title>
 
     <!-- Link init Boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -141,10 +141,10 @@
 
                     <div class="d-flex justify-content-between py-3 align-items-center">
                         <div class="btn-group">
-                            <a href="#">
+                            <a href="../html/connexion.php">
                                 <button type="button" class="btn btn-sm btn-outline-primary">Connexion</button>
                             </a>
-                            <a href="../html/createcompte.php">
+                            <a href="#">
                                 <button type="button" class="btn btn-sm btn-outline-primary">Créer un compte</button>
                             </a> 
                         </div>
@@ -166,42 +166,34 @@
             </div>
         </header>
 
-        <!-- ========= connexion-header ========== -->
-      
-    
-    <div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalSignin">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content rounded-4 shadow">
-                <div class="modal-header p-5 pb-4 border-bottom-0">
-                    <h1 class="fw-bold mb-0 fs-2">Veuillez vous connecter</h1>
-                </div>
+         <!-- ========= inscription-header ========== -->
+    <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+        <div class="row align-items-center g-lg-5 py-5">
+            <div class="col-lg-7 text-center text-lg-start">
+                <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Formulaire d'inscription</h1>
+                <p class="col-lg-10 fs-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam reiciendis voluptatum eos, facilis porro placeat ut minima labore vero, dignissimos ratione! Deserunt consequatur vitae officiis pariatur sunt obcaecati veritatis adipisci!</p>
+            </div>
 
-                <div class="modal-body p-5 pt-0">
-                    <form class="">
-                        <div class="form-floating mb-3">
-                            <input type="email" class="form-control rounded-3" id="floatingInput" placeholder="nom@example.com">
-                            <label for="floatingInput">Adresse e-mail</label>
-                        </div>
+            <div class="col-md-10 mx-auto col-lg-5">
+                <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="nom@example.com">
+                        <label for="floatingInput">Adresse e-mail</label>
+                    </div>
 
-                        <div class="form-floating mb-3">
-                            <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Mot de passe">
-                            <label for="floatingPassword">Mot de passe</label>
-                        </div>
-
-                        <div class="form-check text-start my-3">
-                            <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Se souvenir de moi
-                            </label>
-                        </div>
-
-                        <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Se connecter</button>
-                        <hr class="my-4">
-                    </form>
-                </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Mot de passe">
+                        <label for="floatingPassword">Mot de passe</label>
+                    </div>
+                    
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">S'inscrire</button>
+                    <hr class="my-4">
+                    <small class="text-body-secondary">En cliquant sur S'inscrire, vous acceptez les conditions d'utilisation.</small>
+                </form>
             </div>
         </div>
-    </div>
+  </div>
+
   
     <!-- ============== Footer ================ -->
     <div class="container cont-foot">

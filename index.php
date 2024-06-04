@@ -122,9 +122,10 @@
                     <div class="row">
                         <div class="col-sm-8 col-md-7 py-4">
                             <h4>A propos</h4>
-                            <p class="text-body-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsum soluta quo necessitatibus, itaque accusantium sapiente. Aspernatur, aliquam? Quidem, sed voluptates unde corrupti eius sequi labore cumque porro nemo impedit.
-                            Omnis minima repellat nisi provident pariatur error iure ipsum rem alias, autem quae laborum eaque, molestiae adipisci suscipit nihil reiciendis molestias laboriosam ex accusantium? Earum voluptas a accusamus excepturi beatae.
-                            Odit saepe provident corrupti, non nulla doloremque deserunt assumenda. Quasi, accusantium nisi nesciunt incidunt obcaecati, iste impedit minima vero explicabo harum ea fugiat nulla. Accusantium aut natus fugit? Eum, aliquam?</p>
+                            <p class="text-body-secondary">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsum soluta quo necessitatibus, itaque accusantium sapiente. Aspernatur, aliquam? Quidem, sed voluptates unde corrupti eius sequi labore cumque porro nemo impedit.
+                                Omnis minima repellat nisi provident pariatur error iure ipsum rem alias, autem quae laborum eaque, molestiae adipisci suscipit nihil reiciendis molestias laboriosam ex accusantium? Earum voluptas a accusamus excepturi beatae.
+                                Odit saepe provident corrupti, non nulla doloremque deserunt assumenda. Quasi, accusantium nisi nesciunt incidunt obcaecati, iste impedit minima vero explicabo harum ea fugiat nulla. Accusantium aut natus fugit? Eum, aliquam?</p>
                         </div>
 
                         <div class="col-sm-4 offset-md-1 py-4">
@@ -139,10 +140,10 @@
 
                     <div class="d-flex justify-content-between py-3 align-items-center">
                         <div class="btn-group">
-                            <a href="../monoshop/html/connexion.php">
+                            <a href="../monoshop/config/connexion.php">
                                 <button type="button" class="btn btn-sm btn-outline-primary">Connexion</button>
                             </a>
-                            <a href="../monoshop/html/createcompte.php">
+                            <a href="../monoshop/admin/createcompte.php">
                                 <button type="button" class="btn btn-sm btn-outline-primary">Créer un compte</button>
                             </a> 
                         </div>
@@ -194,7 +195,7 @@
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <a href="../monoshop/html/payment.php">
+                                        <a href="../monoshop/config/connexion.php">
                                             <button type="button" class="btn btn-sm btn-outline-primary">Commander</button>
                                         </a>
                                     </div>
@@ -220,7 +221,7 @@
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <a href="../monoshop/html/payment.php">
+                                        <a href="../monoshop/config/connexion.php">
                                             <button type="button" class="btn btn-sm btn-outline-primary">Commander</button>
                                         </a>
                                     </div>
@@ -246,7 +247,7 @@
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <a href="../monoshop/html/payment.php">
+                                        <a href="../monoshop/config/connexion.php">
                                             <button type="button" class="btn btn-sm btn-outline-primary">Commander</button>
                                         </a>
                                     </div>
@@ -272,7 +273,7 @@
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <a href="../monoshop/html/payment.php">
+                                        <a href="../monoshop/config/connexion.php">
                                             <button type="button" class="btn btn-sm btn-outline-primary">Commander</button>
                                         </a>
                                     </div>
@@ -298,7 +299,7 @@
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <a href="../monoshop/html/payment.php">
+                                        <a href="../monoshop/config/connexion.php">
                                             <button type="button" class="btn btn-sm btn-outline-primary">Commander</button>
                                         </a>
                                     </div>
@@ -324,7 +325,7 @@
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <a href="../monoshop/html/payment.php">
+                                        <a href="../monoshop/config/connexion.php">
                                             <button type="button" class="btn btn-sm btn-outline-primary">Commander</button>
                                         </a>
                                     </div>
@@ -340,6 +341,12 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="my-3 align-center">
+                    <a href="#" class="btn btn-primary">
+                        Voir plus des voitures
+                    </a>
                 </div>
             </div>
         </div>
