@@ -181,11 +181,11 @@
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link" href="../admin/supprime.php">Suppression</a>
+                  <a class="nav-link" active href="../admin/supprime.php" style="font-weight: bold">Suppression</a>
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link" active href="#" style="font-weight: bold">Voitures</a>
+                  <a class="nav-link" href="../admin/afficher.php" >Voitures</a>
                 </li>
 
                 <!-- <li class="nav-item">
@@ -204,31 +204,14 @@
         <div class="afficher py-5 bg-light">
             <div class="container my-5">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Marque</th>
-                                <th scope="col">Model</th>
-                                <th scope="col">Prix</th>
-                                <th scope="col">Description</th>
-                                <th scope="col">Editer</th>
-                            </tr>
-                        </thead>
+                    <form method="post">
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Identifiant du véhicule</label>
+                            <input type="number" class="form-control" required>
+                        </div>
 
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>BMW Serie 3 Touring</td>
-                                <td>M Sport - 320d 190 BVAB</td>
-                                <td>20 494$</td>
-                                <td>2017 | 144805km | Diesel | Automatique</td>
-                                <td>
-                                    <a href="../admin/edite.php"><i class='bx bxs-edit-alt' style="font-size: 35px"></i></a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                        <button type="submit" class="btn btn-warning">Supprimer</button>
+                    </form>
                 </div>
             </div>
         </div>

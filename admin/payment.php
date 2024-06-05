@@ -134,7 +134,7 @@
 
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <a href="../config/connexion.php">
+                            <a href="../login.php">
                                 <button type="button" class="btn btn-sm btn-outline-primary">Connexion</button>
                             </a>
                             <a href="../admin/createcompte.php">
@@ -163,66 +163,13 @@
 
 <div class="container">
   <main>
-    <div class="py-5 text-center">
-      <img class="d-block mx-auto mb-4" src="../img/car dealer.png" alt="" width="200" height="70">
-      <h2>Formulaire de paiement</h2>
-      <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore soluta quos voluptatem doloribus aliquid minus asperiores labore incidunt, tenetur fugiat omnis perferendis, iusto, facere est rerum? Ad cupiditate itaque enim.</p>
-    </div>
-
-    <div class="row g-5">
-      <div class="col-md-5 col-lg-4 order-md-last">
-        <h4 class="d-flex justify-content-between align-items-center mb-3">
-          <span class="text-primary">Votre carte</span>
-          <span class="badge bg-primary rounded-pill">3</span>
-        </h4>
-
-        <ul class="list-group mb-3">
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Nom de produit</h6>
-              <small class="text-body-secondary">Description du produit</small>
-            </div>
-            <span class="text-body-secondary">12$</span>
-          </li>
-
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Second produit</h6>
-              <small class="text-body-secondary">Description du produit</small>
-            </div>
-            <span class="text-body-secondary">8$</span>
-          </li>
-
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Troisième élément</h6>
-              <small class="text-body-secondary">Description du produit</small>
-            </div>
-            <span class="text-body-secondary">5$</span>
-          </li>
-
-          <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
-            <div class="text-success">
-              <h6 class="my-0">Code promo</h6>
-              <small>EXEMPLECODE</small>
-            </div>
-            <span class="text-success">−5$</span>
-          </li>
-
-          <li class="list-group-item d-flex justify-content-between">
-            <span>Total (USD)</span>
-            <strong>20$</strong>
-          </li>
-        </ul>
-
-        <form class="card p-2">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Code promo">
-            <button type="submit" class="btn btn-secondary">Code promo</button>
-          </div>
-        </form>
-
+        <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4" src="../img/car dealer.png" alt="" width="200" height="70">
+            <h2>Formulaire de paiement</h2>
+            <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore soluta quos voluptatem doloribus aliquid minus asperiores labore incidunt, tenetur fugiat omnis perferendis, iusto, facere est rerum? Ad cupiditate itaque enim.</p>
         </div>
+
+        <div class="row g-5">
             <div class="col-md-7 col-lg-8">
                 <h4 class="mb-3">Adresse de facturation</h4>
                 <form class="needs-validation" novalidate>

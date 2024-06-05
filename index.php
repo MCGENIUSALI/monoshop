@@ -140,7 +140,7 @@
 
                     <div class="d-flex justify-content-between py-3 align-items-center">
                         <div class="btn-group">
-                            <a href="../monoshop/config/connexion.php">
+                            <a href="../monoshop/login.php">
                                 <button type="button" class="btn btn-sm btn-outline-primary">Connexion</button>
                             </a>
                             <a href="../monoshop/admin/createcompte.php">
@@ -195,13 +195,13 @@
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <a href="../monoshop/config/connexion.php">
+                                        <a href="../monoshop/login.php">
                                             <button type="button" class="btn btn-sm btn-outline-primary">Commander</button>
                                         </a>
                                     </div>
-                                    <span class="text-body-secondary">2017</span>
-                                    <span class="text-body-secondary">144805km</span>
-                                    <span class="text-body-secondary">Diesel</span>
+                                    <span class="text-body-secondary">2017 |</span>
+                                    <span class="text-body-secondary">144805km |</span>
+                                    <span class="text-body-secondary">Diesel |</span>
                                     <span class="text-body-secondary">Automatique</span>
                                 </div>
 
@@ -221,13 +221,13 @@
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <a href="../monoshop/config/connexion.php">
+                                        <a href="../monoshop/login.php">
                                             <button type="button" class="btn btn-sm btn-outline-primary">Commander</button>
                                         </a>
                                     </div>
-                                    <span class="text-body-secondary">2017</span>
-                                    <span class="text-body-secondary">144805km</span>
-                                    <span class="text-body-secondary">Diesel</span>
+                                    <span class="text-body-secondary">2017 |</span>
+                                    <span class="text-body-secondary">144805km |</span>
+                                    <span class="text-body-secondary">Diesel |</span>
                                     <span class="text-body-secondary">Automatique</span>
                                 </div>
 
@@ -247,13 +247,13 @@
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <a href="../monoshop/config/connexion.php">
+                                        <a href="../monoshop/login.php">
                                             <button type="button" class="btn btn-sm btn-outline-primary">Commander</button>
                                         </a>
                                     </div>
-                                    <span class="text-body-secondary">2017</span>
-                                    <span class="text-body-secondary">144805km</span>
-                                    <span class="text-body-secondary">Diesel</span>
+                                    <span class="text-body-secondary">2017 |</span>
+                                    <span class="text-body-secondary">144805km |</span>
+                                    <span class="text-body-secondary">Diesel |</span>
                                     <span class="text-body-secondary">Automatique</span>
                                 </div>
 
@@ -273,13 +273,13 @@
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <a href="../monoshop/config/connexion.php">
+                                        <a href="../monoshop/login.php">
                                             <button type="button" class="btn btn-sm btn-outline-primary">Commander</button>
                                         </a>
                                     </div>
-                                    <span class="text-body-secondary">2017</span>
-                                    <span class="text-body-secondary">144805km</span>
-                                    <span class="text-body-secondary">Diesel</span>
+                                    <span class="text-body-secondary">2017 |</span>
+                                    <span class="text-body-secondary">144805km |</span>
+                                    <span class="text-body-secondary">Diesel |</span>
                                     <span class="text-body-secondary">Automatique</span>
                                 </div>
 
@@ -299,13 +299,13 @@
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <a href="../monoshop/config/connexion.php">
+                                        <a href="../monoshop/login.php">
                                             <button type="button" class="btn btn-sm btn-outline-primary">Commander</button>
                                         </a>
                                     </div>
-                                    <span class="text-body-secondary">2017</span>
-                                    <span class="text-body-secondary">144805km</span>
-                                    <span class="text-body-secondary">Diesel</span>
+                                    <span class="text-body-secondary">2017 |</span>
+                                    <span class="text-body-secondary">144805km |</span>
+                                    <span class="text-body-secondary">Diesel |</span>
                                     <span class="text-body-secondary">Automatique</span>
                                 </div>
 
@@ -325,13 +325,13 @@
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <a href="../monoshop/config/connexion.php">
+                                        <a href="../monoshop/login.php">
                                             <button type="button" class="btn btn-sm btn-outline-primary">Commander</button>
                                         </a>
                                     </div>
-                                    <span class="text-body-secondary">2017</span>
-                                    <span class="text-body-secondary">144805km</span>
-                                    <span class="text-body-secondary">Diesel</span>
+                                    <span class="text-body-secondary">2017 |</span>
+                                    <span class="text-body-secondary">144805km |</span>
+                                    <span class="text-body-secondary">Diesel |</span>
                                     <span class="text-body-secondary">Automatique</span>
                                 </div>
 
@@ -344,7 +344,7 @@
                 </div>
 
                 <div class="my-3 align-center">
-                    <a href="#" class="btn btn-primary">
+                    <a href="../monoshop/admin/pluscar.php" class="btn btn-primary">
                         Voir plus des voitures
                     </a>
                 </div>

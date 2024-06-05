@@ -185,71 +185,70 @@
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link" active href="#" style="font-weight: bold">Voitures</a>
+                  <a class="nav-link" href="../admin/afficher.php">Voitures</a>
                 </li>
 
-                <!-- <li class="nav-item">
-                  <a class="nav-link" href="../admin/edite.php">Modification</a>
-                </li> -->
+                <li class="nav-item">
+                  <a class="nav-link active" href="#" style="font-weight: bold; color:green;">Modification</a>
+                </li>
               </ul>
 
-              <div style="display: flex;, justify-content: flex-end;" class="my-3 px-2 ">
+              <div style="display: flex;, justify-content: flex-end;" class="my-3 px-2">
                 <a href="../admin/deconnexion.php" class="btn btn-danger">Se deconnecter</a>
               </div>
             </div>
           </div>
         </nav>
 
-        <!-- ========= supprime-header ========== -->
+        <!-- ========= ajout-header ========== -->
         <div class="afficher py-5 bg-light">
             <div class="container my-5">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Marque</th>
-                                <th scope="col">Model</th>
-                                <th scope="col">Prix</th>
-                                <th scope="col">Description</th>
-                                <th scope="col">Editer</th>
-                            </tr>
-                        </thead>
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Marque de la voiture</label>
+                            <input type="name" class="form-control" required>
+                        </div>
 
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>BMW Serie 3 Touring</td>
-                                <td>M Sport - 320d 190 BVAB</td>
-                                <td>20 494$</td>
-                                <td>2017 | 144805km | Diesel | Automatique</td>
-                                <td>
-                                    <a href="../admin/edite.php"><i class='bx bxs-edit-alt' style="font-size: 35px"></i></a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Model</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Prix</label>
+                            <input type="number" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Description</label>
+                            <textarea class="form-control" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-success">Enregistrer</button>
+                    </form>
                 </div>
             </div>
         </div>
 
-        <!-- ============== Footer ================ -->
-        <div class="container my-5 cont-foot">
-            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-5 border-top">
-                <div class="col-md-4 d-flex align-items-center">
-                    <a href="../index.php" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-                        <img src="../img/car dealer.png" width="100">
-                    </a>
-                    <span class="mb-3 mb-md-0 text-body-secondary">&copy; 2024 VroomVroom.cd, Inc</span>
-                </div>
+    <!-- ============== Footer ================ -->
+    <div class="container my-5 cont-foot">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-5 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <a href="../index.php" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                    <img src="../img/car dealer.png" width="100">
+                </a>
+                <span class="mb-3 mb-md-0 text-body-secondary">&copy; 2024 VroomVroom.cd, Inc</span>
+            </div>
 
-                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                    <li class="ms-3"><a class="text-body-secondary" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05a8.07 8.07 0 0 0 5.001-1.721 4.036 4.036 0 0 1-3.767-2.793c.249.037.499.062.761.062.361 0 .724-.05 1.061-.137a4.027 4.027 0 0 1-3.23-3.953v-.05c.537.299 1.16.486 1.82.511a4.022 4.022 0 0 1-1.796-3.354c0-.748.199-1.434.548-2.032a11.457 11.457 0 0 0 8.306 4.215c-.062-.3-.1-.611-.1-.923a4.026 4.026 0 0 1 4.028-4.028c1.16 0 2.207.486 2.943 1.272a7.957 7.957 0 0 0 2.556-.973 4.02 4.02 0 0 1-1.771 2.22 8.073 8.073 0 0 0 2.319-.624 8.645 8.645 0 0 1-2.019 2.083z"></path></svg></a></li>
-                    <li class="ms-3"><a class="text-body-secondary" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"></path></svg></a></li>
-                    <li class="ms-3"><a class="text-body-secondary" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M20.947 8.305a6.53 6.53 0 0 0-.419-2.216 4.61 4.61 0 0 0-2.633-2.633 6.606 6.606 0 0 0-2.186-.42c-.962-.043-1.267-.055-3.709-.055s-2.755 0-3.71.055a6.606 6.606 0 0 0-2.185.42 4.607 4.607 0 0 0-2.633 2.633 6.554 6.554 0 0 0-.419 2.185c-.043.963-.056 1.268-.056 3.71s0 2.754.056 3.71c.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.043 1.268.056 3.71.056s2.755 0 3.71-.056a6.59 6.59 0 0 0 2.186-.419 4.615 4.615 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.187.043-.962.056-1.267.056-3.71-.002-2.442-.002-2.752-.058-3.709zm-8.953 8.297c-2.554 0-4.623-2.069-4.623-4.623s2.069-4.623 4.623-4.623a4.623 4.623 0 0 1 0 9.246zm4.807-8.339a1.077 1.077 0 0 1-1.078-1.078 1.077 1.077 0 1 1 2.155 0c0 .596-.482 1.078-1.077 1.078z"></path><circle cx="11.994" cy="11.979" r="3.003"></circle></svg></a></li>
-                </ul>
-            </footer>
-        </div>
+
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <li class="ms-3"><a class="text-body-secondary" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05a8.07 8.07 0 0 0 5.001-1.721 4.036 4.036 0 0 1-3.767-2.793c.249.037.499.062.761.062.361 0 .724-.05 1.061-.137a4.027 4.027 0 0 1-3.23-3.953v-.05c.537.299 1.16.486 1.82.511a4.022 4.022 0 0 1-1.796-3.354c0-.748.199-1.434.548-2.032a11.457 11.457 0 0 0 8.306 4.215c-.062-.3-.1-.611-.1-.923a4.026 4.026 0 0 1 4.028-4.028c1.16 0 2.207.486 2.943 1.272a7.957 7.957 0 0 0 2.556-.973 4.02 4.02 0 0 1-1.771 2.22 8.073 8.073 0 0 0 2.319-.624 8.645 8.645 0 0 1-2.019 2.083z"></path></svg></a></li>
+                <li class="ms-3"><a class="text-body-secondary" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"></path></svg></a></li>
+                <li class="ms-3"><a class="text-body-secondary" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M20.947 8.305a6.53 6.53 0 0 0-.419-2.216 4.61 4.61 0 0 0-2.633-2.633 6.606 6.606 0 0 0-2.186-.42c-.962-.043-1.267-.055-3.709-.055s-2.755 0-3.71.055a6.606 6.606 0 0 0-2.185.42 4.607 4.607 0 0 0-2.633 2.633 6.554 6.554 0 0 0-.419 2.185c-.043.963-.056 1.268-.056 3.71s0 2.754.056 3.71c.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.043 1.268.056 3.71.056s2.755 0 3.71-.056a6.59 6.59 0 0 0 2.186-.419 4.615 4.615 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.187.043-.962.056-1.267.056-3.71-.002-2.442-.002-2.752-.058-3.709zm-8.953 8.297c-2.554 0-4.623-2.069-4.623-4.623s2.069-4.623 4.623-4.623a4.623 4.623 0 0 1 0 9.246zm4.807-8.339a1.077 1.077 0 0 1-1.078-1.078 1.077 1.077 0 1 1 2.155 0c0 .596-.482 1.078-1.077 1.078z"></path><circle cx="11.994" cy="11.979" r="3.003"></circle></svg></a></li>
+            </ul>
+        </footer>
+    </div>
 
             <!-- link js boostrap -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
