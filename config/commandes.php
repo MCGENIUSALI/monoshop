@@ -6,3 +6,4 @@ function add($Image, $Marque, $Model, $Annee, $Couleur, $Prix, $Kilometrage, $Ty
         VALUES ($Image, $Marque, $Model, $Annee, $Couleur, $Prix, $Kilometrage, $TypeCarburant)");
  }
 }
+
