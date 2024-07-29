@@ -1,3 +1,9 @@
+<?php 
+
+require '../config/commandes.php';
+
+?>
+
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head><script src="/docs/5.3/assets/js/color-modes.js"></script>
@@ -197,39 +203,63 @@
         </nav>
 
         <!-- ========= ajout-header ========== -->
-        <div class="afficher py-5 bg-light">
-            <div class="container my-4">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                    <form>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Marque de la voiture</label>
-                            <input type="name" class="form-control" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Model</label>
-                            <input type="text" class="form-control" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Prix</label>
-                            <input type="number" class="form-control" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Description</label>
-                            <textarea class="form-control" required></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-success">Ajouter</button>
-
-                        <button type="submit" class="btn btn-success">
-                            <a href="../admin/payment.php" class="text-decoration-none" style="color: white;">Acheter</a>
-                        </button>
-                    </form>
+<div class="afficher py-5 bg-light">
+    <div class="container my-4">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <form method="POST">
+                <div class="">
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Image de la voiture</label>
+                        <input type="text" name="image" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea class="form-control" name="description" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="marque" class="form-label">Marque de la voiture</label>
+                        <input type="text" name="marque" class="form-control" required>
+                    </div>
                 </div>
-            </div>
+                <div class="">
+                    <div class="mb-3">
+                        <label for="model" class="form-label">Model</label>
+                        <input type="text" class="form-control" name="model" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="prix" class="form-label">Prix</label>
+                        <input type="number" class="form-control" name="prix" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="kilometrage" class="form-label">Kilométrages</label>
+                        <input type="number" class="form-control" name="kilometrage" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="typecarburant" class="form-label">Type carburants</label>
+                        <select name="typecarburant" class="form-control" required>
+                            <option value="Essence">Essence</option>
+                            <option value="Diesel">Diesel</option>
+                            <option value="Hybrid">Hybrid</option>
+                            <option value="Electrique">Electrique</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="annee" class="form-label">Année</label>
+                        <input type="number" class="form-control" name="annee" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="couleur" class="form-label">Couleur</label>
+                        <input type="text" class="form-control" name="couleur" required>
+                    </div>
+                    <button type="submit" class="btn btn-success" name="valider">Ajouter</button>
+                    <button type="button" class="btn btn-success">
+                        <a href="../admin/payment.php" class="text-decoration-none" style="color: white;">Acheter</a>
+                    </button>
+                </div>
+            </form>
         </div>
+    </div>
+</div>
 
     <!-- ============== Footer ================ -->
     <div class="container my-5 cont-foot">
@@ -241,7 +271,6 @@
                 <span class="mb-3 mb-md-0 text-body-secondary">&copy; 2024 VroomVroom.cd, Inc</span>
             </div>
 
-
             <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
                 <li class="ms-3"><a class="text-body-secondary" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05a8.07 8.07 0 0 0 5.001-1.721 4.036 4.036 0 0 1-3.767-2.793c.249.037.499.062.761.062.361 0 .724-.05 1.061-.137a4.027 4.027 0 0 1-3.23-3.953v-.05c.537.299 1.16.486 1.82.511a4.022 4.022 0 0 1-1.796-3.354c0-.748.199-1.434.548-2.032a11.457 11.457 0 0 0 8.306 4.215c-.062-.3-.1-.611-.1-.923a4.026 4.026 0 0 1 4.028-4.028c1.16 0 2.207.486 2.943 1.272a7.957 7.957 0 0 0 2.556-.973 4.02 4.02 0 0 1-1.771 2.22 8.073 8.073 0 0 0 2.319-.624 8.645 8.645 0 0 1-2.019 2.083z"></path></svg></a></li>
                 <li class="ms-3"><a class="text-body-secondary" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"></path></svg></a></li>
@@ -249,8 +278,36 @@
             </ul>
         </footer>
     </div>
-
             <!-- link js boostrap -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
 </html>
+
+
+<?php
+if(isset($_POST['valider'])){
+    if(isset($_POST['image']) && isset($_POST['description']) && isset($_POST['marque']) && isset($_POST['model']) 
+        && isset($_POST['prix']) && isset($_POST['kilometrage']) && isset($_POST['typecarburant']) && isset($_POST['annee']) && isset($_POST['couleur'])){
+        if(!empty($_POST['image']) && !empty($_POST['description']) && !empty($_POST['marque']) && !empty($_POST['model']) 
+            && !empty($_POST['prix']) && !empty($_POST['kilometrage']) && !empty($_POST['typecarburant']) && !empty($_POST['annee']) && !empty($_POST['couleur'])){
+            
+            $image = htmlspecialchars(strip_tags($_POST['image']));
+            $desc = htmlspecialchars(strip_tags($_POST['description']));
+            $marque = htmlspecialchars(strip_tags($_POST['marque']));
+            $model = htmlspecialchars(strip_tags($_POST['model']));
+            $prix = htmlspecialchars(strip_tags($_POST['prix']));
+            $kilometrage = htmlspecialchars(strip_tags($_POST['kilometrage']));
+            $typecarburant = htmlspecialchars(strip_tags($_POST['typecarburant']));
+            $annee = htmlspecialchars(strip_tags($_POST['annee']));
+            $couleur = htmlspecialchars(strip_tags($_POST['couleur']));
+
+            try {
+                add($image, $desc, $marque, $model, $annee, $couleur, $prix, $kilometrage, $typecarburant);
+            } catch (Exception $e) {
+                echo $e->getMessage();
+            }
+        }
+    }
+}
+?>
+

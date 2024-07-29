@@ -1,3 +1,11 @@
+<?php 
+
+require 'config/commandes.php';
+
+$produits = afficher();
+
+?>
+
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head><script src="/docs/5.3/assets/js/color-modes.js"></script>
@@ -183,172 +191,43 @@
 
         <!-- ============== container-carts ================ -->
         <div class="album py-5 bg-body-tertiary">
-            <div class="container">
-
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <span><img src="../monoshop/img/1.jpg" width="100%" height="100%"></span>
-                            <div class="card-body">
-                                <p class="card-text">BMW Serie 3 Touring <br>
-                                    <span class="text-body-secondary">M Sport - 320d 190 BVAB</span>
-                                </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="../monoshop/login.php">
-                                            <button type="button" class="btn btn-sm btn-outline-primary">Commander</button>
-                                        </a>
-                                    </div>
-                                    <span class="text-body-secondary">2017 |</span>
-                                    <span class="text-body-secondary">144805km |</span>
-                                    <span class="text-body-secondary">Diesel |</span>
-                                    <span class="text-body-secondary">Automatique</span>
-                                </div>
-
-                                <div class="pt-3 card-text">
-                                    <h2 class="fs-4 fw-bold">20 494$</h2>
-                                </div>
-                            </div>
-                        </div>
+<div class="container">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    <?php foreach ($produits as $produit) : ?> 
+    <div class="col">
+        <div class="card shadow-sm">
+            <span><img src="<?= $produit->Image ?>" width="100%" height="100%"></span>
+            <div class="card-body">
+                <h4 class="card-text"><?= $produit->Marque ?></h4><br>
+                <span class="text-body-secondary"><?= $produit->Model ?></span><br>
+                <span class="text-body-secondary"><?= $produit->Description ?></span>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                        <a href="../monoshop/login.php">
+                            <button type="button" class="btn btn-sm btn-outline-primary">Commander</button>
+                        </a>
                     </div>
-
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <span><img src="../monoshop/img/2.jpg" width="100%" height="100%"></span>
-                            <div class="card-body">
-                                <p class="card-text">BMW Serie 3 Touring <br>
-                                    <span class="text-body-secondary">M Sport - 320d 190 BVAB</span>
-                                </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="../monoshop/login.php">
-                                            <button type="button" class="btn btn-sm btn-outline-primary">Commander</button>
-                                        </a>
-                                    </div>
-                                    <span class="text-body-secondary">2017 |</span>
-                                    <span class="text-body-secondary">144805km |</span>
-                                    <span class="text-body-secondary">Diesel |</span>
-                                    <span class="text-body-secondary">Automatique</span>
-                                </div>
-
-                                <div class="pt-3 card-text">
-                                    <h2 class="fs-4 fw-bold"">20 494$</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <span><img src="../monoshop/img/3.jpg" width="100%" height="100%"></span>
-                            <div class="card-body">
-                                <p class="card-text">BMW Serie 3 Touring <br>
-                                    <span class="text-body-secondary">M Sport - 320d 190 BVAB</span>
-                                </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="../monoshop/login.php">
-                                            <button type="button" class="btn btn-sm btn-outline-primary">Commander</button>
-                                        </a>
-                                    </div>
-                                    <span class="text-body-secondary">2017 |</span>
-                                    <span class="text-body-secondary">144805km |</span>
-                                    <span class="text-body-secondary">Diesel |</span>
-                                    <span class="text-body-secondary">Automatique</span>
-                                </div>
-
-                                <div class="pt-3 card-text">
-                                    <h2 class="fs-4 fw-bold"">20 494$</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <span><img src="../monoshop/img/4.jpg" width="100%" height="100%"></span>
-                            <div class="card-body">
-                                <p class="card-text">BMW Serie 3 Touring <br>
-                                    <span class="text-body-secondary">M Sport - 320d 190 BVAB</span>
-                                </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="../monoshop/login.php">
-                                            <button type="button" class="btn btn-sm btn-outline-primary">Commander</button>
-                                        </a>
-                                    </div>
-                                    <span class="text-body-secondary">2017 |</span>
-                                    <span class="text-body-secondary">144805km |</span>
-                                    <span class="text-body-secondary">Diesel |</span>
-                                    <span class="text-body-secondary">Automatique</span>
-                                </div>
-
-                                <div class="pt-3 card-text">
-                                    <h2 class="fs-4 fw-bold"">20 494$</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <span><img src="../monoshop/img/bg2.jpg" width="100%" height="100%"></span>
-                            <div class="card-body">
-                                <p class="card-text">BMW Serie 3 Touring <br>
-                                    <span class="text-body-secondary">M Sport - 320d 190 BVAB</span>
-                                </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="../monoshop/login.php">
-                                            <button type="button" class="btn btn-sm btn-outline-primary">Commander</button>
-                                        </a>
-                                    </div>
-                                    <span class="text-body-secondary">2017 |</span>
-                                    <span class="text-body-secondary">144805km |</span>
-                                    <span class="text-body-secondary">Diesel |</span>
-                                    <span class="text-body-secondary">Automatique</span>
-                                </div>
-
-                                <div class="pt-3 card-text">
-                                    <h2 class="fs-4 fw-bold"">20 494$</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <span><img src="../monoshop/img/bg3.jpg" width="100%" height="100%"></span>
-                            <div class="card-body">
-                                <p class="card-text">BMW Serie 3 Touring <br>
-                                    <span class="text-body-secondary">M Sport - 320d 190 BVAB</span>
-                                </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="../monoshop/login.php">
-                                            <button type="button" class="btn btn-sm btn-outline-primary">Commander</button>
-                                        </a>
-                                    </div>
-                                    <span class="text-body-secondary">2017 |</span>
-                                    <span class="text-body-secondary">144805km |</span>
-                                    <span class="text-body-secondary">Diesel |</span>
-                                    <span class="text-body-secondary">Automatique</span>
-                                </div>
-
-                                <div class="pt-3 card-text">
-                                    <h2 class="fs-4 fw-bold"">20 494$</h2>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="d-flex">
+                        <span class="badge bg-secondary ms-2"><?= $produit->Annee ?></span>
+                        <span class="badge bg-secondary ms-2"><?= $produit->TypeCarburant ?></span>
+                        <span class="badge bg-secondary ms-2"><?= $produit->Model ?></span>
                     </div>
                 </div>
-
-                <div class="my-3 align-center">
+                <div class="pt-3 card-text">
+                    <h2 class="fs-4 fw-bold"><?= $produit->Prix ?>$</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php endforeach ?>
+</div>
+    </div>
+        </div>
+            <div class="my-3 align-center">
                     <a href="../monoshop/admin/pluscar.php" class="btn btn-primary">
                         Voir plus des voitures
                     </a>
                 </div>
-            </div>
         </div>
     </main>
 

@@ -1,3 +1,11 @@
+<?php 
+
+require '../config/commandes.php';
+
+$produits = afficher();
+
+?>
+
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head><script src="/docs/5.3/assets/js/color-modes.js"></script>
@@ -202,20 +210,25 @@
 
         <!-- ========= supprime-header ========== -->
         <div class="afficher py-5 bg-light">
-            <div class="container my-5">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                    <form method="post">
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Identifiant du véhicule</label>
-                            <input type="number" class="form-control" required>
+        <div class="container my-5">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <?php foreach ($produits as $produit) : ?> 
+                <div class="col" id="product-<?= $produit->ID ?>">
+                    <div class="card shadow-sm">
+                        <span><img src="<?= $produit->Image ?>" width="100%" height="100%"></span>
+                        <div class="card-body">
+                            <h4 class="card-text"><?= $produit->ID ?></h4><br>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p><?= $produit->Model ?></p>
+                                <button class="btn btn-danger btn-sm delete-button" data-id="<?= $produit->ID ?>">Supprimer</button>
+                            </div>
                         </div>
-
-                        <button type="submit" class="btn btn-warning">Supprimer</button>
-                    </form>
+                    </div>
                 </div>
+                <?php endforeach ?>
             </div>
         </div>
-
+    </div>
         <!-- ============== Footer ================ -->
         <div class="container my-5 cont-foot">
             <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-5 border-top">
@@ -235,6 +248,31 @@
         </div>
 
             <!-- link js boostrap -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    </body>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('.delete-button').on('click', function() {
+            var productId = $(this).data('id');
+            if (confirm('Êtes-vous sûr de vouloir supprimer ce produit ?')) {
+                $.ajax({
+                    url: 'delete_product.php',
+                    type: 'POST',
+                    data: { idproduit: productId },
+                    success: function(response) {
+                        if (response.success) {
+                            $('#product-' + productId).remove();
+                        } else {
+                            alert('Erreur lors de la suppression du produit.');
+                        }
+                    },
+                    error: function() {
+                        alert('Erreur lors de la requête.');
+                    }
+                });
+            }
+        });
+    });
+    </script>
+  </body>
 </html>
