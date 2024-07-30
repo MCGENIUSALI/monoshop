@@ -27,7 +27,7 @@ $produits = afficher();
     <style>
 
       .bd-placeholder-img {
-        font-size: 1.125rem;
+        font-size: 1.125rem;%
         text-anchor: middle;
         -webkit-user-select: none;
         -moz-user-select: none;
@@ -196,8 +196,8 @@ $produits = afficher();
     <?php foreach ($produits as $produit) : ?> 
     <div class="col">
         <div class="card shadow-sm">
-            <span><img src="<?= $produit->Image ?>" width="100%" height="100%"></span>
-            <div class="card-body">
+        <span><img src="<?= $produit->Image ?>" width="100%" height="100%"></span>
+        <div class="card-body">
                 <h4 class="card-text"><?= $produit->Marque ?></h4><br>
                 <span class="text-body-secondary"><?= $produit->Model ?></span><br>
                 <span class="text-body-secondary"><?= $produit->Description ?></span>

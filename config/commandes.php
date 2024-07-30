@@ -1,5 +1,22 @@
 <?php
 
+
+function getProduit($id) {
+    if (require("connexion.php")) {
+        // Assurez-vous que $access est défini dans votre fichier connexion.php
+        $req = $access->prepare("SELECT * FROM produits WHERE ID = ?");
+        
+        $req->execute(array($id));
+        
+        if ($req->rowCount() == 1) {
+            $data = $req->fetchAll(PDO::FETCH_OBJ);
+            return $data;
+        }
+        $req->closeCursor();
+    }
+}
+
+
 function getAdmins($email, $password){
     if(require("connexion.php")){
         $req = $access->prepare("SELECT * FROM admin WHERE email = ? AND motdepasse = ?  ");
@@ -18,10 +35,19 @@ function getAdmins($email, $password){
 
 function add($Image, $Description, $Marque, $Model, $Annee, $Couleur, $Prix, $Kilometrage, $TypeCarburant){
     if(require('connexion.php')){
-        $req = $access->prepare("INSERT INTO produits (`Image`, `Marque`, `Description`, `Model`, `Annee`, `Couleur`, `Prix`, `Kilometrage`, `TypeCarburant`) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $req = $access->prepare("INSERT INTO produits (`Image`, `Marque`, `Description`, `Model`, `Annee`, `Couleur`, `Prix`, `Kilometrage`, `TypeCarburant` WHERE ID = ? ");
         
         $req->execute(array($Image, $Description, $Marque, $Model, $Annee, $Couleur, $Prix, $Kilometrage, $TypeCarburant));
+        
+        $req->closeCursor();
+    }
+}
+
+function update($Image, $Marque, $Description, $Model, $Annee, $Couleur, $Prix, $Kilometrage, $TypeCarburant, $id){
+    if(require('connexion.php')){
+        $req = $access->prepare("UPDATE produits SET `Image` = ?, `Marque` = ?, `Description` = ?, `Model` = ?, `Annee` = ?, `Couleur` = ?, `Prix` = ?, `Kilometrage` = ?, `TypeCarburant` = ? WHERE `id` = ?");
+        
+        $req->execute(array($Image, $Marque, $Description, $Model, $Annee, $Couleur, $Prix, $Kilometrage, $TypeCarburant, $id));
         
         $req->closeCursor();
     }

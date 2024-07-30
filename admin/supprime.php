@@ -1,5 +1,16 @@
 <?php 
 
+session_start();
+
+if(!isset($_SESSION['ZDjklijUU12y54'])){
+  header("Location: ../login.php"); 
+}
+
+if(empty($_SESSION['ZDjklijUU12y54'])){
+  header("Location: ../login.php"); 
+}
+
+
 require '../config/commandes.php';
 
 $produits = afficher();

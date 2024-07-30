@@ -1,4 +1,13 @@
 <?php 
+session_start();
+
+if(!isset($_SESSION['ZDjklijUU12y54'])){
+  header("Location: ../login.php"); 
+}
+
+if(empty($_SESSION['ZDjklijUU12y54'])){
+  header("Location: ../login.php"); 
+}
 
 require '../config/commandes.php';
 
@@ -206,12 +215,12 @@ require '../config/commandes.php';
 <div class="afficher py-5 bg-light">
     <div class="container my-4">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            <form method="POST">
+            <form method="POST" enctype="multipart/form-data" >
                 <div class="">
                     <div class="mb-3">
                         <label for="image" class="form-label">Image de la voiture</label>
-                        <input type="text" name="image" class="form-control" required>
-                    </div>
+                        <input type="file" name="image" class="form-control" required>
+                      </div>
                     <div class="mb-3">
                         <label for="description" class="form-label">Description</label>
                         <textarea class="form-control" name="description" required></textarea>
@@ -285,13 +294,13 @@ require '../config/commandes.php';
 
 
 <?php
-if(isset($_POST['valider'])){
-    if(isset($_POST['image']) && isset($_POST['description']) && isset($_POST['marque']) && isset($_POST['model']) 
-        && isset($_POST['prix']) && isset($_POST['kilometrage']) && isset($_POST['typecarburant']) && isset($_POST['annee']) && isset($_POST['couleur'])){
-        if(!empty($_POST['image']) && !empty($_POST['description']) && !empty($_POST['marque']) && !empty($_POST['model']) 
-            && !empty($_POST['prix']) && !empty($_POST['kilometrage']) && !empty($_POST['typecarburant']) && !empty($_POST['annee']) && !empty($_POST['couleur'])){
+if (isset($_POST['valider'])) {
+    if (isset($_FILES['image']) && isset($_POST['description']) && isset($_POST['marque']) && isset($_POST['model']) 
+        && isset($_POST['prix']) && isset($_POST['kilometrage']) && isset($_POST['typecarburant']) && isset($_POST['annee']) && isset($_POST['couleur'])) {
+        if (!empty($_FILES['image']['name']) && !empty($_POST['description']) && !empty($_POST['marque']) && !empty($_POST['model']) 
+            && !empty($_POST['prix']) && !empty($_POST['kilometrage']) && !empty($_POST['typecarburant']) && !empty($_POST['annee']) && !empty($_POST['couleur'])) {
             
-            $image = htmlspecialchars(strip_tags($_POST['image']));
+            $image = $_FILES['image'];
             $desc = htmlspecialchars(strip_tags($_POST['description']));
             $marque = htmlspecialchars(strip_tags($_POST['marque']));
             $model = htmlspecialchars(strip_tags($_POST['model']));
@@ -301,10 +310,38 @@ if(isset($_POST['valider'])){
             $annee = htmlspecialchars(strip_tags($_POST['annee']));
             $couleur = htmlspecialchars(strip_tags($_POST['couleur']));
 
-            try {
-                add($image, $desc, $marque, $model, $annee, $couleur, $prix, $kilometrage, $typecarburant);
-            } catch (Exception $e) {
-                echo $e->getMessage();
+            $imageName = $image['name'];
+            $imageTmpName = $image['tmp_name'];
+            $imageSize = $image['size'];
+            $imageError = $image['error'];
+            $imageType = $image['type'];
+
+            $imageExt = explode('.', $imageName);
+            $imageActualExt = strtolower(end($imageExt));
+
+            $allowed = array('jpg', 'jpeg', 'png');
+
+            if (in_array($imageActualExt, $allowed)) {
+                if ($imageError === 0) {
+                    if ($imageSize < 11000000) {
+                        $imageNameNew = uniqid('', true) . "." . $imageActualExt;
+                        $imageDestination = 'uploads/' . $imageNameNew;
+
+                        move_uploaded_file($imageTmpName, $imageDestination);
+
+                        try {
+                            add($imageDestination, $desc, $marque, $model, $annee, $couleur, $prix, $kilometrage, $typecarburant);
+                        } catch (Exception $e) {
+                            echo $e->getMessage();
+                        }
+                    } else {
+                        echo "Votre fichier est trop volumineux!";
+                    }
+                } else {
+                    echo "Il y a eu une erreur lors de l'importation de votre fichier!";
+                }
+            } else {
+                echo "Vous ne pouvez pas importer des fichiers de ce type!";
             }
         }
     }

@@ -1,7 +1,45 @@
+<?php 
+session_start();
+
+if (!isset($_SESSION['ZDjklijUU12y54']) || empty($_SESSION['ZDjklijUU12y54'])) {
+    header("Location: ../login.php");
+    exit();
+}
+
+if (!isset($_GET['id']) || empty($_GET['id']) || !is_numeric($_GET['id'])) {
+    header("Location: afficher.php");
+    exit();
+}
+
+$id = $_GET['id'];
+
+require '../config/commandes.php';
+
+$produits = getProduit($id);
+
+if (empty($produits)) {
+    header("Location: afficher.php");
+    exit();
+}
+
+$produit = $produits[0];
+$idPDT = $produit->ID;
+$image = $produit->Image;
+$marque = $produit->Marque;
+$description = $produit->Description;
+$model = $produit->Model;
+$annee = $produit->Annee;
+$couleur = $produit->Couleur;
+$prix = $produit->Prix;
+$kilometrage = $produit->Kilometrage;
+$typeCarburant = $produit->TypeCarburant;
+
+?>
+
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
-  <head><script src="/docs/5.3/assets/js/color-modes.js"></script>
-
+<head>
+    <script src="/docs/5.3/assets/js/color-modes.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -9,7 +47,7 @@
     <meta name="generator" content="Hugo 0.122.0">
     <title>website_VroomVroom_connexion</title>
 
-    <!-- Link init Boostrap -->
+    <!-- Link init Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <!-- Box icons -->
@@ -17,7 +55,6 @@
     
     <!-- Style CSS -->
     <style>
-
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -73,7 +110,6 @@
       .btn-bd-primary {
         --bd-violet-bg: #712cf9;
         --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-
         --bs-btn-font-weight: 600;
         --bs-btn-color: var(--bs-white);
         --bs-btn-bg: var(--bd-violet-bg);
@@ -111,125 +147,158 @@
         color:rgb(76,78,79);
         font-size:1rem;
       }
+
+      .container-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
     </style>
- 
 </head>
-    <body>    
-        <!-- ============== Header ================ -->
-        <header data-bs-theme="dark">
-            <div class="collapse text-bg-dark" id="navbarHeader">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-8 col-md-7 py-4">
-                            <h4>A propos</h4>
-                            <p class="text-body-secondary">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsum soluta quo necessitatibus, itaque accusantium sapiente. Aspernatur, aliquam? Quidem, sed voluptates unde corrupti eius sequi labore cumque porro nemo impedit.
-                                Omnis minima repellat nisi provident pariatur error iure ipsum rem alias, autem quae laborum eaque, molestiae adipisci suscipit nihil reiciendis molestias laboriosam ex accusantium? Earum voluptas a accusamus excepturi beatae.
-                                Odit saepe provident corrupti, non nulla doloremque deserunt assumenda. Quasi, accusantium nisi nesciunt incidunt obcaecati, iste impedit minima vero explicabo harum ea fugiat nulla. Accusantium aut natus fugit? Eum, aliquam?
-                            </p>
-                        </div>
-
-                        <div class="col-sm-4 offset-md-1 py-4">
-                            <h4>Suivez nous sur :</h4>
-                            <ul class="list-unstyled">
-                                <li><a href="#" class="text-white icon-header"><i class='bx bxl-twitter'></i> Twitter</a></li>
-                                <li><a href="#" class="text-white icon-header"><i class='bx bxl-facebook'></i> Facebook</a></li>
-                                <li><a href="#" class="text-white icon-header"><i class='bx bxl-instagram-alt'></i> Instagram</a></li>
-                            </ul>
-                        </div>
+<body>    
+    <!-- ============== Header ================ -->
+    <header data-bs-theme="dark">
+        <div class="collapse text-bg-dark" id="navbarHeader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-md-7 py-4">
+                        <h4>A propos</h4>
+                        <p class="text-body-secondary">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsum soluta quo necessitatibus, itaque accusantium sapiente. Aspernatur, aliquam? Quidem, sed voluptates unde corrupti eius sequi labore cumque porro nemo impedit.
+                            Omnis minima repellat nisi provident pariatur error iure ipsum rem alias, autem quae laborum eaque, molestiae adipisci suscipit nihil reiciendis molestias laboriosam ex accusantium? Earum voluptas a accusamus excepturi beatae.
+                            Odit saepe provident corrupti, non nulla doloremque deserunt assumenda. Quasi, accusantium nisi nesciunt incidunt obcaecati, iste impedit minima vero explicabo harum ea fugiat nulla. Accusantium aut natus fugit? Eum, aliquam?
+                        </p>
                     </div>
 
-                    <div class="d-flex justify-content-between py-3 align-items-center">
-                        <div class="btn-group">
-                            <a href="../login.php">
-                                <button type="button" class="btn btn-sm btn-outline-primary">Connexion</button>
-                            </a>
-                            <a href="../admin/createcompte.php">
-                                <button type="button" class="btn btn-sm btn-outline-primary">Créer un compte</button>
-                            </a> 
-                        </div>
+                    <div class="col-sm-4 offset-md-1 py-4">
+                        <h4>Suivez nous sur :</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-white icon-header"><i class='bx bxl-twitter'></i> Twitter</a></li>
+                            <li><a href="#" class="text-white icon-header"><i class='bx bxl-facebook'></i> Facebook</a></li>
+                            <li><a href="#" class="text-white icon-header"><i class='bx bxl-instagram-alt'></i> Instagram</a></li>
+                        </ul>
                     </div>
                 </div>
-            </div>
 
-        <!-- ============== Logo ================ -->
-            <div class="navbar navbar-dark bg-dark shadow-sm">
-                <div class="container">
-                <a href="../index.php" class="navbar-brand d-flex align-items-center">
-                    <span><img src="../img/car dealer.png" width="150" alt=""></span>
-                    <strong>VroomVroom</strong>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                </div>
-            </div>
-        </header>
-
-        <!-- ======== navbar ========= -->
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#">VroomVroom</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="../admin/index.php">Nouveau</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="../admin/supprime.php">Suppression</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="../admin/afficher.php">Voitures</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link active" href="#" style="font-weight: bold; color:green;">Modification</a>
-                </li>
-              </ul>
-
-              <div style="display: flex;, justify-content: flex-end;" class="my-3 px-2">
-                <a href="../admin/deconnexion.php" class="btn btn-danger">Se deconnecter</a>
-              </div>
-            </div>
-          </div>
-        </nav>
-
-        <!-- ========= ajout-header ========== -->
-        <div class="afficher py-5 bg-light">
-            <div class="container my-5">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                    <form>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Marque de la voiture</label>
-                            <input type="name" class="form-control" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Model</label>
-                            <input type="text" class="form-control" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Prix</label>
-                            <input type="number" class="form-control" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Description</label>
-                            <textarea class="form-control" required></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-success">Enregistrer</button>
-                    </form>
+                <div class="d-flex justify-content-between py-3 align-items-center">
+                    <div class="btn-group">
+                        <a href="../login.php">
+                            <button type="button" class="btn btn-sm btn-outline-primary">Connexion</button>
+                        </a>
+                        <a href="../admin/createcompte.php">
+                            <button type="button" class="btn btn-sm btn-outline-primary">Créer un compte</button>
+                        </a> 
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!-- ============== Logo ================ -->
+        <div class="navbar navbar-dark bg-dark shadow-sm">
+            <div class="container">
+            <a href="../index.php" class="navbar-brand d-flex align-items-center">
+                <span><img src="../img/car dealer.png" width="150" alt=""></span>
+                <strong>VroomVroom</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ======== navbar ========= -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid ">
+        <a class="navbar-brand" href="#">VroomVroom</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="../admin/index.php">Nouveau</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="../admin/supprime.php">Suppression</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="../admin/afficher.php">Voitures</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" href="#" style="font-weight: bold; color:green;">Modification</a>
+            </li>
+          </ul>
+
+          <div style="display: flex;, justify-content: flex-end;" class="my-3 px-2">
+            <a href="../admin/deconnexion.php" class="btn btn-danger">Se deconnecter</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ========= ajout-header ========== -->
+    <div class="afficher py-5 bg-light ">
+        <div class="">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <form method="POST" enctype="multipart/form-data">
+            <div class="col-md-12">
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image de la voiture</label>
+                    <input type="file" name="image" class="form-control" required value="<?= $image ?>">
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class="form-control" name="description" required><?= $description ?></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="marque" class="form-label">Marque de la voiture</label>
+                    <input type="text" name="marque" class="form-control" required value="<?= $marque ?>">
+                </div>
+                <div class="mb-3">
+                    <label for="model" class="form-label">Model</label>
+                    <input type="text" class="form-control" name="model" required value="<?= $model ?>">
+                </div>
+                <div class="mb-3">
+                    <label for="prix" class="form-label">Prix</label>
+                    <input type="number" class="form-control" name="prix" required value="<?= $prix ?>">
+                </div>
+                <div class="mb-3">
+                    <label for="kilometrage" class="form-label">Kilométrages</label>
+                    <input type="number" class="form-control" name="kilometrage" required value="<?= $kilometrage ?>">
+                </div>
+                <div class="mb-3">
+                    <label for="typecarburant" class="form-label">Type carburants</label>
+                    <select name="typecarburant" class="form-control " required>
+                        <option value="<?= $typeCarburant ?>" class="text-danger"><?= $typeCarburant ?></option>
+                        <option value="Essence">Essence</option>
+                        <option value="Diesel">Diesel</option>
+                        <option value="Hybrid">Hybrid</option>
+                        <option value="Electrique">Electrique</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="annee" class="form-label">Année</label>
+                    <input type="number" class="form-control" name="annee" required value="<?= $annee ?>">
+                </div>
+                <div class="mb-3">
+                    <label for="couleur" class="form-label">Couleur</label>
+                    <input type="text" class="form-control" name="couleur" required value="<?= $couleur ?>">
+                </div>
+                <button type="submit" class="btn btn-success" name="valider">Ajouter</button>
+                <button type="button" class="btn btn-success">
+                    <a href="../admin/payment.php" class="text-decoration-none" style="color: white;">Acheter</a>
+                </button>
+            </div>
+        </form>
+    </div>
+        </div>
+    </div>
 
     <!-- ============== Footer ================ -->
     <div class="container my-5 cont-foot">
@@ -250,7 +319,66 @@
         </footer>
     </div>
 
-            <!-- link js boostrap -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    </body>
+    <!-- link js bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
 </html>
+<?php
+    if (isset($_POST['valider'])) {
+        if (isset($_FILES['image']) && isset($_POST['description']) && isset($_POST['marque']) && isset($_POST['model']) 
+            && isset($_POST['prix']) && isset($_POST['kilometrage']) && isset($_POST['typecarburant']) && isset($_POST['annee']) && isset($_POST['couleur'])) {
+            if (!empty($_FILES['image']['name']) && !empty($_POST['description']) && !empty($_POST['marque']) && !empty($_POST['model']) 
+                && !empty($_POST['prix']) && !empty($_POST['kilometrage']) && !empty($_POST['typecarburant']) && !empty($_POST['annee']) && !empty($_POST['couleur'])) {
+                
+                $image = $_FILES['image'];
+                $desc = htmlspecialchars(strip_tags($_POST['description']));
+                $marque = htmlspecialchars(strip_tags($_POST['marque']));
+                $model = htmlspecialchars(strip_tags($_POST['model']));
+                $prix = htmlspecialchars(strip_tags($_POST['prix']));
+                $kilometrage = htmlspecialchars(strip_tags($_POST['kilometrage']));
+                $typecarburant = htmlspecialchars(strip_tags($_POST['typecarburant']));
+                $annee = htmlspecialchars(strip_tags($_POST['annee']));
+                $couleur = htmlspecialchars(strip_tags($_POST['couleur']));
+
+                $imageName = $image['name'];
+                $imageTmpName = $image['tmp_name'];
+                $imageSize = $image['size'];
+                $imageError = $image['error'];
+                $imageType = $image['type'];
+
+                $imageExt = explode('.', $imageName);
+                $imageActualExt = strtolower(end($imageExt));
+
+                $allowed = array('jpg', 'jpeg', 'png');
+
+                if (in_array($imageActualExt, $allowed)) {
+                    if ($imageError === 0) {
+                        if ($imageSize < 11000000) {
+                            $imageNameNew = uniqid('', true) . "." . $imageActualExt;
+                            $imageDestination = 'uploads/' . $imageNameNew;
+
+                            move_uploaded_file($imageTmpName, $imageDestination);
+
+                            try {
+                                update($imageDestination, $desc, $marque, $model, $annee, $couleur, $prix, $kilometrage, $typecarburant,$id);
+                                echo "Mise à jour réussie";
+                            } catch (Exception $e) {
+                                echo "Erreur lors de la mise à jour : " . $e->getMessage();
+                            }
+                        } else {
+                            echo "Votre fichier est trop volumineux!";
+                        }
+                    } else {
+                        echo "Il y a eu une erreur lors de l'importation de votre fichier!";
+                    }
+                } else {
+                    echo "Vous ne pouvez pas importer des fichiers de ce type!";
+                }
+            } else {
+                echo "Veuillez remplir tous les champs!";
+            }
+        } else {
+            echo "Tous les champs sont requis!";
+        }
+    }
+    ?>

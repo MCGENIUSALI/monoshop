@@ -1,7 +1,8 @@
 <?php 
+ob_start();
+session_start();
 
-include 'config/commandes.php';
-
+include 'config/commandes.php'; 
 
 ?>
 
@@ -236,17 +237,25 @@ include 'config/commandes.php';
 </html>
 
 <?php 
-    if(isset($_POST['envoyer'])){
-        if(!empty($_POST['email']) AND !empty($_POST['motdepasse'])){
-            $email = htmlspecialchars($_POST['email']);
-            $motdepasse = htmlspecialchars($_POST['motdepasse']);
-            $admin =getAdmins($email, $motdepasse);
-        } if($admin){
-            $_SESSION['ZyuuUUUUTGFH12y54'] = $admin ;
 
-            header("Location:") 
-        }else{
+// Votre code PHP pour gérer la connexion
+if(isset($_POST['envoyer'])){
+    if(!empty($_POST['email']) AND !empty($_POST['motdepasse'])){
+        $email = htmlspecialchars($_POST['email']);
+        $motdepasse = htmlspecialchars($_POST['motdepasse']);
+
+        $admin = getAdmins($email, $motdepasse);
+
+        if($admin){
+            $_SESSION['ZDjklijUU12y54'] = $admin;
+            header("Location: admin/"); 
+            exit(); // Assurez-vous d'arrêter l'exécution du script après une redirection
+        } else {
             echo "Il y a un problème de connexion ! ";
         }
     } 
+}
+
+// Fin du tampon de sortie et envoi du contenu
+ob_end_flush();
 ?>
